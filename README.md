@@ -1,6 +1,6 @@
 # Gohetia_Sheldon_Portfolio
 
-In this repo, I am creating my personal portfolio.
+In this repo, I am creating my personal portfolio based on what I've learned from my class.
 
 ## Installation
 
