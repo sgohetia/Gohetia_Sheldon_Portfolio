@@ -1,2 +1,23 @@
 # Gohetia_Sheldon_Portfolio
-In this repo, we are creating our personal portfolio.
+
+In this repo, I am creating my personal portfolio.
+
+## Installation
+
+No installation is required.
+
+## Usage
+
+Open the index file in your browser of choice.
+
+## History
+
+No history is required
+
+## Credits
+
+Sheldon Gohetia
+
+## License
+
+MIT - see license file for more information.
