@@ -1,0 +1,27 @@
+// Variables
+// Store SASS variables for easy access
+
+@use "fonts";
+
+// Colors
+$primary-color: #1dde57;
+$white-color: #ffffff;
+$scrollbar: #343a40;
+$body-color: #0a0a0f;
+$box-color: #16161d;
+
+// Typography
+$main-font: "Poppins", sans-serif;
+$biggest-font-size: 3.5rem;
+$h1-font-size: 1.5rem;
+$h2-font-size: 1.25rem;
+$h3-font-size: 1rem;
+$normal-font-size: 0.938rem;
+$paragraph-font-size: 0.813rem;
+$small-font-size: 0.75rem;
+
+// Font Weights
+$font-regular: 400;
+$font-semi-bold: 600;
+$font-light: 100;
+$font-bold: 800;
