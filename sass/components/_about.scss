@@ -1,0 +1,27 @@
+@use "../abstracts/variables" as a; // I use "a" as about
+
+.about__heading {
+  font-size: a.$h3-font-size;
+  margin-bottom: a.$mb-0-75;
+}
+
+.about__box {
+  text-align: center;
+  border-radius: 0.25rem;
+  padding: 1rem 1.25rem;
+  background-color: a.$box-color;
+}
+
+.about__icon {
+  font-size: 1.5rem;
+  color: a.$primary-color;
+  margin-bottom: a.$mb-0-75;
+}
+
+.about__title {
+  font-size: a.$small-font-size;
+}
+
+.about__subtitle {
+  font-size: a.$smaller-font-size;
+}

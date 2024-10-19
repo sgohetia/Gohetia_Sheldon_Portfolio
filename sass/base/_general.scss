@@ -1,0 +1,86 @@
+@use "../abstracts/variables" as b; // I use "b" as base
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+button,
+input {
+  font-family: b.$main-font;
+  font-size: b.$normal-font-size;
+}
+
+body {
+  background-color: b.$body-color;
+  color: b.$text-color;
+}
+
+h1,
+h2,
+h3 {
+  color: b.$title-color;
+  font-weight: b.$font-bold;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+button,
+input {
+  border: none;
+  outline: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.container {
+  max-width: 1250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid {
+  display: grid;
+}
+
+.section {
+  padding: 6.5rem 0 2rem;
+}
+
+.section__title {
+  text-align: center;
+  font-size: b.$h1-font-size;
+  margin-bottom: b.$mb-3;
+}
+
+.section__title::before {
+  content: attr(data-heading);
+  display: block;
+  font-size: b.$normal-font-size;
+  font-weight: b.$font-medium;
+  color: b.$primary-color;
+}

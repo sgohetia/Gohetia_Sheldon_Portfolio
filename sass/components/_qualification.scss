@@ -1,0 +1,62 @@
+@use "../abstracts/variables" as q; // I use "q" as qualification
+
+.qualification__title {
+  font-size: q.$h3-font-size;
+  font-weight: q.$font-medium;
+  margin-bottom: q.$mb-2;
+}
+
+.timeline__item {
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: q.$mb-2-5;
+}
+
+.timeline__item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline__item::before {
+  content: "";
+  width: 1px;
+  position: absolute;
+  left: 0.47rem;
+  top: 0;
+  height: 100%;
+  background-color: q.$primary-color;
+}
+
+.circle__dot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 1rem;
+  width: 1rem;
+  border: 2px solid q.$primary-color;
+  border-radius: 50%;
+  background-color: q.$primary-color;
+  transition: 0.3s;
+}
+
+.timeline__item:hover .circle__dot {
+  background-color: q.$body-color;
+}
+
+.timeline__title {
+  font-size: q.$normal-font-size;
+  font-weight: q.$font-medium;
+  margin-bottom: q.$mb-0-25;
+}
+
+.timeline__text {
+  font-size: q.$smaller-font-size;
+  margin-bottom: q.$mb-1;
+}
+
+.timeline__date {
+  display: flex;
+  align-items: center;
+  column-gap: 0.4rem;
+  font-size: q.$small-font-size;
+  color: q.$primary-color;
+}

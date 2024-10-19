@@ -1,0 +1,39 @@
+@use "../abstracts/variables" as s; // I use "s" as scrollup
+
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: -30%;
+  background: s.$primary-color;
+  border-radius: 0.4rem;
+  display: inline-flex;
+  padding: 0.25rem;
+  z-index: 10000;
+  opacity: 0.8;
+  transition: 0.4s;
+}
+
+.scrollup:hover {
+  opacity: 1;
+}
+
+.scrollup__icon {
+  font-size: 1.5rem;
+  color: s.$title-color;
+}
+
+.show-scroll {
+  bottom: 3rem;
+}
+
+// Scroll bar
+::-webkit-scrollbar {
+  width: 0.6rem;
+  background-color: s.$scrollbar;
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: s.$scroll-thumb;
+  border-radius: 0.5rem;
+}

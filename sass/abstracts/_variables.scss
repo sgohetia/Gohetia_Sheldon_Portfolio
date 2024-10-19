@@ -4,24 +4,58 @@
 @use "fonts";
 
 // Colors
-$primary-color: #1dde57;
-$white-color: #ffffff;
-$scrollbar: #343a40;
+$primary-color: #17b045;
+$title-color: #f1f1f3;
+$text-color: #d6d6dc;
+$scrollbar: #0ad647;
+$scroll-thumb: #3b3a4a;
 $body-color: #0a0a0f;
 $box-color: #16161d;
+$box-shadow: #12eb53;
 
 // Typography
 $main-font: "Poppins", sans-serif;
-$biggest-font-size: 3.5rem;
-$h1-font-size: 1.5rem;
-$h2-font-size: 1.25rem;
-$h3-font-size: 1rem;
-$normal-font-size: 0.938rem;
-$paragraph-font-size: 0.813rem;
-$small-font-size: 0.75rem;
+
+// Font Sizes
+$biggest-font-size: 3rem;
+$h1-font-size: 2.25rem;
+$h2-font-size: 1.5rem;
+$h3-font-size: 1.25rem;
+$normal-font-size: 1rem;
+$small-font-size: 0.875rem;
+$smaller-font-size: 0.813rem;
 
 // Font Weights
-$font-regular: 400;
-$font-semi-bold: 600;
-$font-light: 100;
-$font-bold: 800;
+$font-medium: 500;
+$font-bold: 600;
+
+// Margin Bottom
+$mb-0-25: 0.25rem;
+$mb-0-5: 0.5rem;
+$mb-0-75: 0.75rem;
+$mb-1: 1rem;
+$mb-1-5: 1.5rem;
+$mb-2: 2rem;
+$mb-2-5: 2.5rem;
+$mb-3: 3rem;
+
+// Z Index
+$z-fixed: 10;
+$z-modal: 100;
+
+// Video player
+$plyr-color-main: #1dde57;
+$plyr-control-icon-size: 1rem;
+$plyr-control-radius: 0px;
+$plyr-video-controls-background: linear-gradient(rgba(0, 0, 0, 0), #1dde57);
+
+// Responsive Typography
+@media screen and (max-width: 1024px) {
+  $biggest-font-size: 2rem;
+  $h1-font-size: 1.5rem;
+  $h2-font-size: 1.25rem;
+  $h3-font-size: 1.125rem;
+  $normal-font-size: 0.938rem;
+  $small-font-size: 0.813rem;
+  $smaller-font-size: 0.75rem;
+}
