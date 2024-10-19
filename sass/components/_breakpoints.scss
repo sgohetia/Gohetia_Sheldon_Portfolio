@@ -28,6 +28,10 @@
   text-align: center;
   margin: auto;
 }
+.img__footer {
+  width: 100px;
+  height: 100px;
+}
 
 .nav__menu {
   position: fixed;
@@ -516,6 +520,9 @@
     display: block;
     width: 250px;
     justify-self: center;
+  }
+  .img__footer {
+    width: 80px;
   }
 
   .home__social {
