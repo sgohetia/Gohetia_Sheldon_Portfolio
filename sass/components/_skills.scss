@@ -1,0 +1,88 @@
+@use "../abstracts/variables" as s; // I use "s" as skills
+
+.skills__header {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.skills__header:not(:last-child) {
+  margin-bottom: s.$mb-2-5;
+}
+
+.skills__icon,
+.skills__arrow {
+  font-size: 2rem;
+  color: s.$primary-color;
+}
+
+.skills__icon {
+  margin-right: s.$mb-0-75;
+}
+
+.skills__title {
+  font-size: s.$h3-font-size;
+  font-weight: s.$font-medium;
+}
+
+.skills__subtitle {
+  font-size: s.$small-font-size;
+}
+
+.skills__arrow {
+  margin-left: auto;
+}
+
+.skills__active .skills__arrow {
+  transform: rotate(-90deg);
+  transition: 0.3s;
+}
+
+.skills [data-content] {
+  display: none;
+}
+
+.skills__active[data-content] {
+  display: block;
+}
+
+.skills__list {
+  row-gap: 1.8rem;
+}
+
+.skills__titles {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: s.$mb-0-5;
+}
+
+.skills__name {
+  font-size: s.$normal-font-size;
+  font-weight: s.$font-medium;
+}
+
+.skills__bar,
+.skills__percentage {
+  height: 5px;
+  border-radius: 0.25rem;
+}
+
+.skills__bar {
+  background-color: s.$box-color;
+}
+
+.skills__percentage {
+  display: block;
+  background-color: s.$primary-color;
+}
+
+.icon__logo img {
+  color: s.$primary-color;
+  left: 0;
+  right: 0;
+  top: 1.8rem;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  margin: auto;
+}

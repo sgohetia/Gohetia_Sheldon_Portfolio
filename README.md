@@ -16,7 +16,7 @@ No history is required
 
 ## Credits
 
-Sheldon Gohetia
+Sheldon P. Gohetia
 
 ## License
 
