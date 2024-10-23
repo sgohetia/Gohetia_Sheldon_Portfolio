@@ -64,7 +64,6 @@
   content: url("/images/mylogo.svg");
   width: 6px;
   height: 48px;
-  // background-color: q.$primary-color;
   border-radius: 50%;
   bottom: 1.8rem;
   left: 0;
@@ -96,6 +95,13 @@
 }
 .home {
   background: url("/images/home-bg.jpg");
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+}
+
+.home-casestudy {
+  background: url("/images/sample.jpg");
   background-size: cover;
   background-position: center center;
   height: 100vh;
@@ -149,8 +155,10 @@
 .about__img {
   width: 580px;
   justify-self: center;
-  background-color: q.$plyr-color-main;
-  box-shadow: q.$box-color;
+}
+.case__img {
+  width: 580px;
+  justify-self: center;
 }
 
 :root {

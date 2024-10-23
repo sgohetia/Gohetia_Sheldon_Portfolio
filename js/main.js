@@ -55,7 +55,7 @@
     });
   }
 
-  // This is to populate the popup windero for my project content
+  // This is to populate the popup window for my project content
   document.addEventListener("click", (e) => {
     if (e.target.classList.contains("work__button")) {
       togglePortfolioPopup();
@@ -67,9 +67,15 @@
     document.querySelector(".portfolio__popup").classList.toggle("open");
   }
 
-  document
-    .querySelector(".portfolio__popup-close")
-    .addEventListener("click", togglePortfolioPopup);
+  // I need to check if the close button exists before adding the event listener because in my first try,
+  // I encountered null error in the browser console even though it executed correctly and the reason was
+  // the element class popup-close is not yet in the DOM at that moment because it will only trigger when
+  // the popup opens. So by adding this checking, it will ensure that the element exist in the DOM. This prevent
+  // error from console browser if the element is not yet present.
+  const closeButton = document.querySelector(".portfolio__popup-close");
+  if (closeButton) {
+    closeButton.addEventListener("click", togglePortfolioPopup);
+  }
 
   function portfolioItemDetails(portfolioItem) {
     document.querySelector(".pp__thumbnail img").src =

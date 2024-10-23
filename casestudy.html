@@ -39,22 +39,22 @@
           <div class="menu">
             <ul class="nav__list">
               <li class="nav__item">
-                <a href="index.html" class="nav__link active-link">Home</a>
+                <a href="#home" class="nav__link active-link">Intro</a>
               </li>
               <li class="nav__item">
-                <a href="index.html" class="nav__link">About</a>
+                <a href="#about" class="nav__link">Problem</a>
               </li>
               <li class="nav__item">
-                <a href="index.html" class="nav__link">Work</a>
+                <a href="#work" class="nav__link">Role</a>
               </li>
               <li class="nav__item">
-                <a href="index.html" class="nav__link">Services</a>
+                <a href="#services" class="nav__link">Concept</a>
               </li>
               <li class="nav__item">
-                <a href="index.html" class="nav__link">Skills</a>
+                <a href="#skills" class="nav__link">Process</a>
               </li>
               <li class="nav__item">
-                <a href="index.html" class="nav__link">Contact</a>
+                <a href="#contact" class="nav__link">Deliverable</a>
               </li>
             </ul>
           </div>
@@ -65,7 +65,9 @@
             This is for portfolio url copy to clipboard if clicked so easy to
             share
           </h5>
-          <i class="ri-share-fill social__share"></i>
+          <a href="index.html" class="back-home-btn"
+            ><i class="ri-arrow-left-circle-fill social__share"></i
+          ></a>
         </div>
 
         <div class="nav__close" id="nav-close">
@@ -75,9 +77,18 @@
     </aside>
 
     <main class="main">
-      <section class="home" id="home">
+      <section class="home-casestudy" id="home">
         <h2 class="hidden">This is for the home section</h2>
         <div class="home__container container grid">
+          <div class="home__social">
+            <h3 class="hidden">This is for my social links</h3>
+            <span class="casestudy-back-btn">Return to main page</span>
+            <div class="home__social-links">
+              <a href="index.html" target="_blank" class="home__social-link">
+                <i class="ri-home-3-fill"></i>
+              </a>
+            </div>
+          </div>
           <h3 class="hidden">This is my hero image for mobile</h3>
           <img
             src="images/home-img.png"
@@ -102,15 +113,7 @@
 
         <div class="about__container container grid">
           <h3 class="hidden">This is for project image</h3>
-          <!-- <video
-            id="video-player"
-            class="about__img player"
-            controls
-            preload="metadata"
-            muted
-          >
-            <source src="video/demoreel.mp4" type="video/mp4" />
-          </video> -->
+          <img src="images/work-1.jpg" alt="" class="case__img" />
 
           <div class="about__data">
             <h2 class="hidden">This is for the problem brief</h2>
@@ -129,6 +132,7 @@
         <h1 class="hidden">This is for my work or project showcase section</h1>
         <h2 data-heading="Case Study" class="section__title">My Role</h2>
         <div class="about__container container grid">
+          <img src="images/work-1.jpg" alt="" class="about__img" />
           <div class="about__data">
             <p class="about__description">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum
@@ -148,6 +152,7 @@
         </h2>
 
         <div class="about__container container grid">
+          <img src="images/work-1.jpg" alt="" class="about__img" />
           <div class="about__data">
             <p class="about__description">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum
@@ -167,6 +172,7 @@
         <h2 data-heading="Case Study" class="section__title">Design Process</h2>
 
         <div class="about__container container grid">
+          <img src="images/work-1.jpg" alt="" class="about__img" />
           <div class="about__data">
             <p class="about__description">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum
@@ -179,13 +185,14 @@
         </div>
       </section>
 
-      <section class="qualification section">
+      <section class="qualification section" id="contact">
         <h1 class="hidden">This is for the experience and education</h1>
         <h2 data-heading="Case Study" class="section__title">
           Final Deliverable
         </h2>
 
         <div class="about__container container grid">
+          <img src="images/work-1.jpg" alt="" class="about__img" />
           <div class="about__data">
             <p class="about__description">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum
