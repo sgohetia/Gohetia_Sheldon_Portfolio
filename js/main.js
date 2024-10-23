@@ -1,5 +1,24 @@
 (() => {
   console.log("IIFE Fired!");
+  // Register first the gsap plugin
+  gsap.registerPlugin(ScrollToPlugin);
+
+  const navlinks = document.querySelectorAll("#main-header ul li a");
+  // console.log(navlinks);
+  function scrollLink(e) {
+    // console.log("scroll link called");
+    e.preventDefault();
+    // console.log(e.currentTarget.hash);
+    let selectedLink = e.currentTarget.hash;
+    gsap.to(window, {
+      duration: 1,
+      scrollTo: { y: `${selectedLink}` },
+    });
+  }
+
+  navlinks.forEach((link) => {
+    link.addEventListener("click", scrollLink);
+  });
 
   //This is for the video player
   const player = new Plyr("#player");
