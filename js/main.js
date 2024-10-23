@@ -2,7 +2,7 @@
   console.log("IIFE Fired!");
 
   //This is for the video player
-  const player = new Plyr("player");
+  const player = new Plyr("#player");
 
   // This is to show my sidebar
   const navMenu = document.querySelector("#sidebar"),

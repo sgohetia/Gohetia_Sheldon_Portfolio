@@ -60,10 +60,11 @@
 .nav__link.active-link::after,
 .nav__link:hover::after {
   position: absolute;
-  content: "";
+  // content: "";
+  content: url("/images/mylogo.svg");
   width: 6px;
-  height: 6px;
-  background-color: q.$primary-color;
+  height: 48px;
+  // background-color: q.$primary-color;
   border-radius: 50%;
   bottom: 1.8rem;
   left: 0;
@@ -147,10 +148,17 @@
 
 .about__img {
   width: 580px;
-  border-radius: 0.75rem;
   justify-self: center;
-  background-color: q.$primary-color;
+  background-color: q.$plyr-color-main;
   box-shadow: q.$box-color;
+}
+
+:root {
+  --plyr-color-main: #1dde57;
+  --plyr-control-icon-size: 1rem;
+  --plyr-control-radius: 35px;
+  --plyr-video-controls-background: linear-gradient(rgba(0, 0, 0, 0), #09852e);
+  --plyr-font-family: "Poppins", sans-serif;
 }
 
 .about__description {
@@ -335,6 +343,7 @@
   .nav__link.active-link::after,
   .nav__link:hover::after {
     bottom: 0;
+    height: 20px;
   }
 
   .nav__close {
