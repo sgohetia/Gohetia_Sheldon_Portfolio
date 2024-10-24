@@ -15,21 +15,6 @@
   top: 50%;
 }
 
-.casestudy-back-btn {
-  font-weight: h.$font-medium;
-  position: relative;
-}
-
-.casestudy-back-btn::after {
-  content: "";
-  position: absolute;
-  width: 1rem;
-  height: 2px;
-  background-color: h.$primary-color;
-  right: -25%;
-  top: 50%;
-}
-
 .home__social-links {
   display: inline-flex;
   column-gap: 1rem;
