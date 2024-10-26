@@ -3,6 +3,7 @@
   // Register first the gsap plugin
   gsap.registerPlugin(ScrollToPlugin);
 
+  // This is for the smooth scrolling
   const navlinks = document.querySelectorAll("#main-header ul li a");
   // console.log(navlinks);
   function scrollLink(e) {
@@ -104,6 +105,26 @@
     document.querySelector(".portfolio__popup-body").innerHTML =
       portfolioItem.querySelector(".portfolio__item-details").innerHTML;
   }
+
+  // This for my contact input form label animation
+  const inputs = document.querySelectorAll(".input");
+
+  function focusInput() {
+    let parent = this.parentNode;
+    parent.classList.add("focus");
+  }
+
+  function blurInput() {
+    let parent = this.parentNode;
+    if (this.value == "") {
+      parent.classList.remove("focus");
+    }
+  }
+
+  inputs.forEach((input) => {
+    input.addEventListener("focus", focusInput);
+    input.addEventListener("blur", blurInput);
+  });
 
   // This is to show the scroll up button
   function scrollUp() {
