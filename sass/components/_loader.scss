@@ -1,0 +1,24 @@
+@use "../abstracts/variables" as l; // I use "l" as loader
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  z-index: 10000;
+  transition: opacity 0.75s, visibility 0.75s;
+}
+.loader--hidden {
+  opacity: 0;
+  //visibility: hidden;
+  transition: opacity 0.5s ease;
+}
+.loader__video {
+  max-width: 50%;
+  max-height: 50%;
+}
