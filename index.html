@@ -20,6 +20,12 @@
   </head>
 
   <body>
+    <div class="loader">
+      <video class="loader__video" autoplay muted loop playsinline>
+        <source src="video/pageload.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
     <h2 class="hidden">This is the menu burger for mobile</h2>
     <div class="nav__toggle" id="nav-toggle">
       <i class="ri-menu-line"></i>
@@ -159,7 +165,7 @@
             preload="metadata"
             muted
           >
-            <source src="video/demoreel.mp4" type="video/mp4" />
+            <source src="video/demoreel-1.mp4" type="video/mp4" />
           </video>
 
           <div class="about__data">
@@ -214,14 +220,14 @@
         <div class="work__filters">
           <h3 class="hidden">This is for the filter feature.</h3>
           <span class="work__item active-work" data-filter="all">All</span>
-          <span class="work__item" data-filter=".web">Web Dev</span>
-          <span class="work__item" data-filter=".motion">Motion</span>
-          <span class="work__item" data-filter=".design">UI/UX</span>
+          <span class="work__item" data-filter="backend">Backend</span>
+          <span class="work__item" data-filter="design">UI/UX</span>
+          <span class="work__item" data-filter="motion">Motion</span>
         </div>
 
         <div class="work__container container grid">
           <h3 class="hidden">This is for the projects content.</h3>
-          <div class="work__card mix web">
+          <div class="work__card mix web" data-category="design">
             <img src="images/work-1.jpg" alt="" class="work__img" />
             <h3 class="work__title">UX and Web development</h3>
             <span class="work__button"
@@ -247,7 +253,7 @@
             </div>
           </div>
 
-          <div class="work__card mix app">
+          <div class="work__card mix app" data-category="motion">
             <img src="images/work-2.jpg" alt="" class="work__img" />
             <h3 class="work__title">3D Model Design</h3>
             <span class="work__button"
@@ -271,7 +277,7 @@
             </div>
           </div>
 
-          <div class="work__card mix design">
+          <div class="work__card mix design" data-category="design">
             <img src="images/work-3.jpg" alt="" class="work__img" />
             <h3 class="work__title">UI/UX Design</h3>
             <span class="work__button"
@@ -295,7 +301,7 @@
             </div>
           </div>
 
-          <div class="work__card mix app">
+          <div class="work__card mix app" data-category="motion">
             <img src="images/work-4.jpg" alt="" class="work__img" />
             <h3 class="work__title">3D Model and Branding</h3>
             <span class="work__button"
@@ -322,9 +328,9 @@
             </div>
           </div>
 
-          <div class="work__card mix web">
+          <div class="work__card mix web" data-category="backend">
             <img src="images/work-5.jpg" alt="" class="work__img" />
-            <h3 class="work__title">Web Design</h3>
+            <h3 class="work__title">Backend Development</h3>
             <span class="work__button"
               >View Details
               <i class="ri-arrow-right-line work__button-icon"></i>
@@ -348,7 +354,7 @@
             </div>
           </div>
 
-          <div class="work__card mix design">
+          <div class="work__card mix design" data-category="backend">
             <img src="images/work-6.jpg" alt="" class="work__img" />
             <h3 class="work__title">Firmware Integration</h3>
             <span class="work__button"
@@ -429,7 +435,7 @@
               <i class="ri-layout-grid-fill services__icon"></i>
               <h3 class="services__title">
                 Motion <br />
-                Designer
+                Design
               </h3>
             </div>
 
@@ -440,44 +446,55 @@
 
             <div class="services__modal">
               <div class="services__modal-content">
-                <i class="uil uil-times services__modal-close"></i>
+                <i class="ri-close-large-line services__modal-close"></i>
 
-                <h3 class="services__modal-title">Motion Designer</h3>
+                <h3 class="services__modal-title">Motion Design</h3>
                 <p class="services__modal-description">
-                  Services with more than a years of experience. Providing
-                  quality work to clients and companies.
+                  Creative motion designer with over a year of experience in
+                  crafting dynamic animations and visuals that bring ideas to
+                  life.
                 </p>
 
                 <ul class="services__modal-services grid">
                   <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
+                    <i class="ri-checkbox-fill services__modal-icon"></i>
+                    <p class="services__modal-info">Logo Animation.</p>
+                  </li>
+                  <li class="services__modal-service">
+                    <i class="ri-checkbox-fill services__modal-icon"></i>
+                    <p class="services__modal-info">Background Animations.</p>
+                  </li>
+                  <li class="services__modal-service">
+                    <i class="ri-checkbox-fill services__modal-icon"></i>
+                    <p class="services__modal-info">UI/UX Animation.</p>
+                  </li>
+                  <li class="services__modal-service">
+                    <i class="ri-checkbox-fill services__modal-icon"></i>
+                    <p class="services__modal-info">Product Demo Videos.</p>
+                  </li>
+                  <li class="services__modal-service">
+                    <i class="ri-checkbox-fill services__modal-icon"></i>
                     <p class="services__modal-info">
-                      I make your imagination into reality.
+                      Video Editing and Motion Enhancements.
                     </p>
                   </li>
                   <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
+                    <i class="ri-checkbox-fill services__modal-icon"></i>
+                    <p class="services__modal-info">Infographic Animation.</p>
+                  </li>
+                  <li class="services__modal-service">
+                    <i class="ri-checkbox-fill services__modal-icon"></i>
+                    <p class="services__modal-info">Character Animation.</p>
+                  </li>
+                  <li class="services__modal-service">
+                    <i class="ri-checkbox-fill services__modal-icon"></i>
                     <p class="services__modal-info">
-                      3D Modeling and animation.
+                      3D Animation and Motion Graphics.
                     </p>
                   </li>
                   <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p class="services__modal-info">
-                      I create 3D Model dynamic and animated.
-                    </p>
-                  </li>
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p class="services__modal-info">
-                      I am UX and Web developer.
-                    </p>
-                  </li>
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p class="services__modal-info">
-                      Design and mockups of products for companies.
-                    </p>
+                    <i class="ri-checkbox-fill services__modal-icon"></i>
+                    <p class="services__modal-info">Interactive Animations.</p>
                   </li>
                 </ul>
               </div>
@@ -488,8 +505,8 @@
             <div>
               <i class="ri-expand-left-right-line services__icon"></i>
               <h3 class="services__title">
-                Web <br />
-                Developer
+                Backend <br />
+                Development
               </h3>
             </div>
 
@@ -500,42 +517,49 @@
 
             <div class="services__modal">
               <div class="services__modal-content">
-                <i class="uil uil-times services__modal-close"></i>
+                <i class="ri-close-large-line services__modal-close"></i>
 
-                <h3 class="services__modal-title">Web/Backend Developer</h3>
+                <h3 class="services__modal-title">Backend Development</h3>
                 <p class="services__modal-description">
-                  Services with more than 3 years of experience. Providing
-                  quality work to clients and companies.
+                  Experienced backend developer with over 3 years in building
+                  robust, scalable server-side applications.
                 </p>
 
                 <ul class="services__modal-services grid">
                   <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
+                    <i class="ri-checkbox-fill services__modal-icon"></i>
                     <p class="services__modal-info">
-                      I develop the user experience and dynamically interactive.
+                      Backend Performance Optimization.
                     </p>
                   </li>
                   <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p class="services__modal-info">Web page development.</p>
-                  </li>
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
+                    <i class="ri-checkbox-fill services__modal-icon"></i>
                     <p class="services__modal-info">
-                      I can manage database and create ux element for
-                      interactions.
+                      Payment Gateway Integration.
                     </p>
                   </li>
                   <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
+                    <i class="ri-checkbox-fill services__modal-icon"></i>
                     <p class="services__modal-info">
-                      I am UX and Web developer.
+                      Content Management System (CMS) Development.
                     </p>
                   </li>
                   <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
+                    <i class="ri-checkbox-fill services__modal-icon"></i>
                     <p class="services__modal-info">
-                      Design and mockups of products for companies.
+                      Database Migration and Maintenance.
+                    </p>
+                  </li>
+                  <li class="services__modal-service">
+                    <i class="ri-checkbox-fill services__modal-icon"></i>
+                    <p class="services__modal-info">
+                      Database Design and Management.
+                    </p>
+                  </li>
+                  <li class="services__modal-service">
+                    <i class="ri-checkbox-fill services__modal-icon"></i>
+                    <p class="services__modal-info">
+                      API Development and Integration.
                     </p>
                   </li>
                 </ul>
@@ -548,7 +572,7 @@
               <i class="ri-image-edit-fill services__icon"></i>
               <h3 class="services__title">
                 UI/UX <br />
-                Designer
+                Design
               </h3>
             </div>
 
@@ -559,41 +583,68 @@
 
             <div class="services__modal">
               <div class="services__modal-content">
-                <i class="uil uil-times services__modal-close"></i>
+                <i class="ri-close-large-line services__modal-close"></i>
 
-                <h3 class="services__modal-title">UI/UX Designer</h3>
+                <h3 class="services__modal-title">UI/UX Design</h3>
                 <p class="services__modal-description">
-                  Services with more than 5 years of experience. Providing
-                  quality work to clients and companies.
+                  Experienced UI/UX designer with over 5 years of expertise in
+                  creating user-centered, visually engaging digital experiences.
                 </p>
 
                 <ul class="services__modal-services grid">
                   <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
+                    <i class="ri-checkbox-fill services__modal-icon"></i>
                     <p class="services__modal-info">
-                      I develop the user interface.
+                      Wireframing and Prototyping.
                     </p>
                   </li>
                   <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p class="services__modal-info">Web page development.</p>
-                  </li>
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
+                    <i class="ri-checkbox-fill services__modal-icon"></i>
                     <p class="services__modal-info">
-                      I create ux element interactions.
+                      Responsive and Adaptive Design.
                     </p>
                   </li>
                   <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
+                    <i class="ri-checkbox-fill services__modal-icon"></i>
                     <p class="services__modal-info">
-                      I am UX and Web developer.
+                      User Research and Analysis.
                     </p>
                   </li>
                   <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
+                    <i class="ri-checkbox-fill services__modal-icon"></i>
                     <p class="services__modal-info">
-                      Design and mockups of products for companies.
+                      Interaction Design and Animation.
+                    </p>
+                  </li>
+                  <li class="services__modal-service">
+                    <i class="ri-checkbox-fill services__modal-icon"></i>
+                    <p class="services__modal-info">
+                      Usability Testing and Iteration.
+                    </p>
+                  </li>
+                  <li class="services__modal-service">
+                    <i class="ri-checkbox-fill services__modal-icon"></i>
+                    <p class="services__modal-info">
+                      Design System and Style Guide Creation.
+                    </p>
+                  </li>
+                  <li class="services__modal-service">
+                    <i class="ri-checkbox-fill services__modal-icon"></i>
+                    <p class="services__modal-info">
+                      Brand Identity and Visual Design.
+                    </p>
+                  </li>
+                  <li class="services__modal-service">
+                    <i class="ri-checkbox-fill services__modal-icon"></i>
+                    <p class="services__modal-info">
+                      UI/UX Consultation and Strategy.
+                    </p>
+                  </li>
+                  <li class="services__modal-service">
+                    <i class="ri-checkbox-fill services__modal-icon"></i>
+                    <p class="services__modal-info">
+                      User Interface (UI) Design and User Experience (UX)
+                      Design.
                     </p>
                   </li>
                 </ul>
@@ -613,8 +664,8 @@
 
         <div class="skills__container container grid">
           <div class="skills__tabs">
-            <div class="skills__header skills__active" data-target="#frontend">
-              <i class="ri-braces-line skills__icon"></i>
+            <div class="skills__header skills__active" data-target="#design">
+              <i class="ri-image-edit-fill skills__icon"></i>
 
               <div>
                 <h1 class="skills__title">UI/UX designer</h1>
@@ -625,7 +676,7 @@
             </div>
 
             <div class="skills__header" data-target="#backend">
-              <i class="ri-git-repository-fill skills__icon"></i>
+              <i class="ri-expand-left-right-line skills__icon"></i>
 
               <div>
                 <h1 class="skills__title">Backend developer</h1>
@@ -669,13 +720,13 @@
                     <img src="images/tailwind-css-2.svg" alt="tailwind" />
                     <img src="images/sass-1.svg" alt="sass" />
                     <img src="images/logo-javascript.svg" alt="JavaScript" />
-                  </div>
-                </div>
-
-                <div class="skills__data">
-                  <div class="icon__logo">
                     <img src="images/photoshop.svg" alt="Photoshop" />
+                    <img
+                      src="images/adobe-illustrator-cc-3.svg"
+                      alt="Illustrator"
+                    />
                     <img src="images/figma-icon.svg" alt="figma" />
+                    <img src="images/adobe-xd-2.svg" alt="adobe-xd" />
                   </div>
                 </div>
               </div>
@@ -687,6 +738,7 @@
                   <div class="icon__logo">
                     <img src="images/php.svg" alt="Php" />
                     <img src="images/mysql.svg" alt="MySQL" />
+                    <img src="images/c--4.svg" alt="C#" />
                   </div>
                 </div>
               </div>
@@ -698,6 +750,10 @@
                   <div class="icon__logo">
                     <img src="images/procreate.svg" alt="procreate" />
                     <img src="images/photoshop.svg" alt="Photoshop" />
+                    <img
+                      src="images/adobe-illustrator-cc-3.svg"
+                      alt="Illustrator"
+                    />
                   </div>
                 </div>
               </div>
@@ -707,6 +763,7 @@
               <div class="skills__list grid">
                 <div class="skills__data">
                   <div class="icon__logo">
+                    <img src="images/procreate.svg" alt="procreate" />
                     <img src="images/cinema4d.svg" alt="cinema4d" />
                     <img src="images/after-effects.svg" alt="After Effects" />
                     <img src="images/premiere-pro.svg" alt="Premier" />
@@ -805,13 +862,15 @@
               <div class="timeline__item">
                 <div class="circle__dot"></div>
                 <h3 class="timeline__title">
-                  Celistino A. Ablas Senior Academy Inc., San Francisco
+                  Technical Education and Skills Development Authority,
                   Philippines
                 </h3>
-                <p class="timeline__text">High School</p>
+                <p class="timeline__text">
+                  National Certificate in Computer System Servicing
+                </p>
                 <span class="timeline__date"
                   ><i class="ri-calendar-2-line"></i>
-                  2007 - 2010
+                  2022 - 2027
                 </span>
               </div>
             </div>

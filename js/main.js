@@ -1,9 +1,51 @@
 (() => {
   console.log("IIFE Fired!");
+
+  // This is to populate my page loader
+  window.addEventListener("load", () => {
+    const loader = document.querySelector(".loader");
+    if (loader) {
+      // console.log("page loaded!");
+
+      setTimeout(() => {
+        loader.classList.add("loader--hidden");
+
+        loader.addEventListener("transitionend", () => {
+          if (document.body.contains(loader)) {
+            document.body.removeChild(loader);
+          }
+        });
+      }, 4500);
+    } else {
+      console.warn("Loader element not found!");
+    }
+  });
+
+  // window.addEventListener("load", () => {
+  //   const loader = document.querySelector(".loader");
+
+  //   if (loader && !localStorage.getItem("pageLoaded")) {
+  //     console.log("page loaded!");
+
+  //     setTimeout(() => {
+  //       loader.classList.add("loader--hidden");
+
+  //       loader.addEventListener("transitionend", () => {
+  //         if (document.body.contains(loader)) {
+  //           document.body.removeChild(loader);
+  //         }
+  //       });
+  //     }, 4500);
+
+  //     localStorage.setItem("pageLoaded", "true");
+  //   } else if (loader) {
+  //     loader.style.display = "none";
+  //   }
+  // });
+
   // Register first the gsap plugin
   gsap.registerPlugin(ScrollToPlugin);
 
-  // This is for the smooth scrolling
   const navlinks = document.querySelectorAll("#main-header ul li a");
   // console.log(navlinks);
   function scrollLink(e) {
@@ -75,6 +117,47 @@
     });
   }
 
+  // This is for the project filter button
+  const filterButtons = document.querySelectorAll(".work__item");
+  const cards = document.querySelectorAll(".work__card");
+
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const filterValue = button.getAttribute("data-filter");
+
+      cards.forEach((card) => {
+        const category = card.getAttribute("data-category");
+
+        if (filterValue === "all" || category === filterValue) {
+          gsap.fromTo(
+            card,
+            {
+              opacity: 0,
+              scale: 0.8,
+              display: "block",
+            },
+            {
+              opacity: 1,
+              scale: 1,
+              duration: 0.5,
+              ease: "power2.out",
+            }
+          );
+        } else {
+          gsap.to(card, {
+            opacity: 0,
+            scale: 0.8,
+            duration: 0.3,
+            ease: "power2.in",
+            onComplete: () => {
+              card.style.display = "none";
+            },
+          });
+        }
+      });
+    });
+  });
+
   // This is to populate the popup window for my project content
   document.addEventListener("click", (e) => {
     if (e.target.classList.contains("work__button")) {
@@ -105,6 +188,52 @@
     document.querySelector(".portfolio__popup-body").innerHTML =
       portfolioItem.querySelector(".portfolio__item-details").innerHTML;
   }
+
+  // This is for my service popup modal content
+  const modalViews = document.querySelectorAll(".services__modal"),
+    modalBtns = document.querySelectorAll(".services__button"),
+    modalCloses = document.querySelectorAll(".services__modal-close");
+
+  function openModal(modalIndex) {
+    const modal = modalViews[modalIndex];
+    modal.classList.add("active-modal");
+  }
+
+  modalBtns.forEach((modalBtn, i) => {
+    modalBtn.addEventListener("click", () => {
+      openModal(i);
+    });
+  });
+
+  modalCloses.forEach((modalClose) => {
+    modalClose.addEventListener("click", () => {
+      modalViews.forEach((modalView) => {
+        modalView.classList.remove("active-modal");
+      });
+    });
+  });
+
+  // This is for my skill tab or dropdown toggle tools icon
+  const tabs = document.querySelectorAll("[data-target]"),
+    tabContent = document.querySelectorAll("[data-content]");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const target = document.querySelector(tab.dataset.target);
+
+      tabContent.forEach((tabContents) => {
+        tabContents.classList.remove("skills__active");
+      });
+
+      target.classList.add("skills__active");
+
+      tabs.forEach((tab) => {
+        tab.classList.remove("skills__active");
+      });
+
+      tab.classList.add("skills__active");
+    });
+  });
 
   // This for my contact input form label animation
   const inputs = document.querySelectorAll(".input");
