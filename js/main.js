@@ -1,25 +1,22 @@
 (() => {
   console.log("IIFE Fired!");
 
-  // This is to populate my page loader
-  // window.addEventListener("load", () => {
-  //   const loader = document.querySelector(".loader");
-  //   if (loader) {
-  //     // console.log("page loaded!");
+  const shareButton = document.querySelector("[data-copy-url]");
 
-  //     setTimeout(() => {
-  //       loader.classList.add("loader--hidden");
-
-  //       loader.addEventListener("transitionend", () => {
-  //         if (document.body.contains(loader)) {
-  //           document.body.removeChild(loader);
-  //         }
-  //       });
-  //     }, 4500);
-  //   } else {
-  //     console.warn("Loader element not found!");
-  //   }
-  // });
+  if (shareButton) {
+    shareButton.addEventListener("click", copyToClipboard);
+  }
+  function copyToClipboard() {
+    const pageUrl = window.location.href; // Get the current page URL
+    navigator.clipboard
+      .writeText(pageUrl)
+      .then(() => {
+        alert("URL copied to clipboard!");
+      })
+      .catch((err) => {
+        console.error("Failed to copy:", err);
+      });
+  }
 
   window.addEventListener("load", () => {
     const loader = document.querySelector(".loader");
