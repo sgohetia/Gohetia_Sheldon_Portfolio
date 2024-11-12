@@ -32,6 +32,7 @@
 
 .home__title {
   font-size: h.$biggest-font-size;
+  display: flex;
 }
 
 .home__subtitle {
@@ -99,4 +100,36 @@
 
 .button__icon {
   font-size: 1.25rem;
+}
+
+.typing {
+  color: h.$primary-color;
+  padding-left: 10px;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid h.$scrollbar;
+  width: 0;
+  animation: typing 3s steps(10, end) 1s infinite, blink 0.7s infinite step-end;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  70% {
+    width: 7ch;
+  }
+  90% {
+    width: 7ch;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
 }

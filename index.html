@@ -108,7 +108,9 @@
 
           <div class="home__data">
             <h3 class="hidden">This is my intro info</h3>
-            <h1 class="home__title">Hi, I'am Sheldon</h1>
+            <h1 class="home__title">
+              Hi, I'am <span class="typing">Sheldon</span>
+            </h1>
             <h3 class="home__subtitle">UX and Web developer</h3>
             <p class="home__description">
               A passionate Web Developer specializing in creating dynamic and
@@ -158,30 +160,29 @@
 
         <div class="about__container container grid">
           <h3 class="hidden">This is for my demo reel</h3>
-          <video
-            id="player"
-            class="about__img player"
-            controls
-            preload="metadata"
-            muted
-          >
-            <source src="video/demoreel-1.mp4" type="video/mp4" />
-          </video>
-
+          <div class="demo-reel">
+            <video
+              id="player"
+              class="about__img player"
+              controls
+              preload="metadata"
+              muted
+            >
+              <source src="video/demoreel-1.mp4" type="video/mp4" />
+            </video>
+          </div>
           <div class="about__data">
             <h2 class="hidden">This is for my about me intro</h2>
-            <h3 class="about__heading">Hi, I'm Sheldon Gohetia</h3>
+            <h3 class="about__heading">
+              Hi, I'm <span class="fullname">Sheldon Gohetia</span>
+            </h3>
             <p class="about__description">
-              As a seasoned UX and web developer with over five years of
-              experience, I bring a blend of technical skill and design
-              intuition to each project I undertake. My journey began with a
-              fascination for how design and functionality can shape user
-              experiences, and it has evolved into a passion for creating
-              intuitive, impactful digital solutions. From wireframing to final
-              launch, I ensure every detail serves a purpose, enhancing
-              usability and engagement. I thrive on challenges and love
-              collaborating to turn ideas into seamless, user-centered
-              interfaces that elevate brands and resonate with audiences.
+              I'm a UX and web developer with over 5 years of experience,
+              dedicated to crafting intuitive digital solutions. My passion for
+              design and functionality drives me to create user-friendly
+              interfaces that enhance engagement. From concept to launch, I
+              focus on details that elevate brands and deliver impactful user
+              experiences.
             </p>
             <div class="about__info grid">
               <h4 class="hidden">
@@ -1097,7 +1098,7 @@
 
     <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <!-- ScrollTo plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
     <script src="js/main.js"></script>
   </body>

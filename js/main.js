@@ -2,30 +2,10 @@
   console.log("IIFE Fired!");
 
   // This is to populate my page loader
-  window.addEventListener("load", () => {
-    const loader = document.querySelector(".loader");
-    if (loader) {
-      // console.log("page loaded!");
-
-      setTimeout(() => {
-        loader.classList.add("loader--hidden");
-
-        loader.addEventListener("transitionend", () => {
-          if (document.body.contains(loader)) {
-            document.body.removeChild(loader);
-          }
-        });
-      }, 4500);
-    } else {
-      console.warn("Loader element not found!");
-    }
-  });
-
   // window.addEventListener("load", () => {
   //   const loader = document.querySelector(".loader");
-
-  //   if (loader && !localStorage.getItem("pageLoaded")) {
-  //     console.log("page loaded!");
+  //   if (loader) {
+  //     // console.log("page loaded!");
 
   //     setTimeout(() => {
   //       loader.classList.add("loader--hidden");
@@ -36,12 +16,32 @@
   //         }
   //       });
   //     }, 4500);
-
-  //     localStorage.setItem("pageLoaded", "true");
-  //   } else if (loader) {
-  //     loader.style.display = "none";
+  //   } else {
+  //     console.warn("Loader element not found!");
   //   }
   // });
+
+  window.addEventListener("load", () => {
+    const loader = document.querySelector(".loader");
+
+    if (loader && !localStorage.getItem("pageLoaded")) {
+      console.log("page loaded!");
+
+      setTimeout(() => {
+        loader.classList.add("loader--hidden");
+
+        loader.addEventListener("transitionend", () => {
+          if (document.body.contains(loader)) {
+            document.body.removeChild(loader);
+          }
+        });
+      }, 4500);
+
+      localStorage.setItem("pageLoaded", "true");
+    } else if (loader) {
+      loader.style.display = "none";
+    }
+  });
 
   // Register first the gsap plugin
   gsap.registerPlugin(ScrollToPlugin);
@@ -61,6 +61,78 @@
 
   navlinks.forEach((link) => {
     link.addEventListener("click", scrollLink);
+  });
+
+  //Adding gsap animation for sections
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.from(".home__social", {
+    scrollTrigger: {
+      trigger: ".home__social",
+      toggleActions: "restart none restart none",
+    },
+    opacity: 0,
+    duration: 5,
+    ease: "power2.out",
+  });
+  gsap.from(".home__data", {
+    scrollTrigger: {
+      trigger: ".home__data",
+      toggleActions: "restart none restart none",
+    },
+    x: -100,
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out",
+  });
+  gsap.from(".my__info", {
+    scrollTrigger: {
+      trigger: ".my__info",
+      toggleActions: "restart none restart none",
+    },
+    scale: 0.5,
+    opacity: 0,
+    duration: 2,
+    ease: "power2.out",
+  });
+  gsap.from(".demo-reel", {
+    scrollTrigger: {
+      trigger: ".demo-reel",
+      toggleActions: "restart none restart none",
+    },
+    x: -100,
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out",
+  });
+  gsap.from(".about__heading", {
+    scrollTrigger: {
+      trigger: ".about__heading",
+      toggleActions: "restart none restart none",
+    },
+    x: 100,
+    opacity: 0,
+    duration: 2,
+    ease: "power2.out",
+  });
+  gsap.from(".about__description", {
+    scrollTrigger: {
+      trigger: ".about__description",
+      toggleActions: "restart none restart none",
+    },
+    x: 100,
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out",
+  });
+  gsap.from(".about__info", {
+    scrollTrigger: {
+      trigger: ".about__info",
+      toggleActions: "restart none restart none",
+    },
+    scale: 0.5,
+    opacity: 0,
+    duration: 2,
+    ease: "power2.out",
   });
 
   //This is for the video player
