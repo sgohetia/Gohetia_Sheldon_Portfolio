@@ -157,11 +157,11 @@
   const linkWork = document.querySelectorAll(".work__item");
 
   function activeWork() {
-    linkWork.forEach((l) => l.classList.remove("active-work"));
+    linkWork.forEach((link) => link.classList.remove("active-work"));
     this.classList.add("active-work");
   }
 
-  linkWork.forEach((l) => l.addEventListener("click", activeWork));
+  linkWork.forEach((link) => link.addEventListener("click", activeWork));
 
   // --- This is for my active link sections
   const sections = document.querySelectorAll("section[id]");
@@ -283,7 +283,7 @@
     });
   });
 
-  // --- This is for my skill tab or dropdown toggle tools icon
+  // --- This is for my skills tab or toggle tools icon
   const tabs = document.querySelectorAll("[data-target]"),
     tabContent = document.querySelectorAll("[data-content]");
 
@@ -325,7 +325,7 @@
     if (window.innerWidth >= 768) return 2;
     return 1;
   }
-  // This Function to calculate my slide slide width to ensure the cards fit perfectly within the container
+  // This Function is to calculate my slide slide width to ensure the cards fit perfectly within the container
   function getSlideWidth() {
     const containerWidth = document.querySelector(
       ".testimonials__container"
@@ -356,7 +356,7 @@
     slideWidth = getSlideWidth();
     goToSlide(currentIndex);
   }
-  // Add Listener to next and previous set of slides
+
   nextBtn.addEventListener("click", () => {
     currentIndex++;
     if (currentIndex >= totalCards) currentIndex = 0;
@@ -367,9 +367,8 @@
     if (currentIndex < 0) currentIndex = totalCards - slidesToShow;
     goToSlide(currentIndex);
   });
-  // Add as well my Listener here to make it sure it is responsive
+
   window.addEventListener("resize", updateResponsiveSettings);
-  // This will Initialize on load
   updateResponsiveSettings();
 
   // --- This for my contact input form label animation
