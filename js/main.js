@@ -133,6 +133,236 @@
     duration: 2,
     ease: "power2.out",
   });
+  gsap.from(".skills__container", {
+    scrollTrigger: {
+      trigger: ".skills__container",
+      toggleActions: "restart none restart none",
+    },
+    scale: 0.5,
+    opacity: 0,
+    duration: 2,
+    ease: "power2.out",
+  });
+  gsap.from(".p-web", {
+    scrollTrigger: {
+      trigger: ".p-web",
+      toggleActions: "restart none restart none",
+    },
+    x: -100,
+    opacity: 0,
+    duration: 2,
+    ease: "power2.out",
+  });
+  gsap.from(".p-motion", {
+    scrollTrigger: {
+      trigger: ".p-motion",
+      toggleActions: "restart none restart none",
+    },
+    scale: 0.5,
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out",
+  });
+  gsap.from(".p-design", {
+    scrollTrigger: {
+      trigger: ".p-design",
+      toggleActions: "restart none restart none",
+    },
+    x: 100,
+    opacity: 0,
+    duration: 2,
+    ease: "power2.out",
+  });
+  gsap.from(".p-motion2", {
+    scrollTrigger: {
+      trigger: ".p-motion2",
+      toggleActions: "restart none restart none",
+    },
+    x: -100,
+    opacity: 0,
+    duration: 3,
+    ease: "power2.out",
+  });
+  gsap.from(".p-backend", {
+    scrollTrigger: {
+      trigger: ".p-backend",
+      toggleActions: "restart none restart none",
+    },
+    scale: 0.5,
+    opacity: 0,
+    duration: 2,
+    ease: "power2.out",
+  });
+  gsap.from(".p-backend2", {
+    scrollTrigger: {
+      trigger: ".p-backend2",
+      toggleActions: "restart none restart none",
+    },
+    x: 100,
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out",
+  });
+  gsap.from(".m-design", {
+    scrollTrigger: {
+      trigger: ".m-design",
+      toggleActions: "restart none restart none",
+    },
+    x: -100,
+    opacity: 0,
+    duration: 2,
+    ease: "power2.out",
+  });
+  gsap.from(".b-end", {
+    scrollTrigger: {
+      trigger: ".b-end",
+      toggleActions: "restart none restart none",
+    },
+    scale: 0.5,
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out",
+  });
+  gsap.from(".ui-design", {
+    scrollTrigger: {
+      trigger: ".ui-design",
+      toggleActions: "restart none restart none",
+    },
+    x: 100,
+    opacity: 0,
+    duration: 2,
+    ease: "power2.out",
+  });
+  gsap.from(".experience", {
+    scrollTrigger: {
+      trigger: ".experience",
+      toggleActions: "restart none restart none",
+    },
+    x: -100,
+    opacity: 0,
+    duration: 2,
+    ease: "power2.out",
+  });
+  gsap.from(".education", {
+    scrollTrigger: {
+      trigger: ".education",
+      toggleActions: "restart none restart none",
+    },
+    x: 100,
+    opacity: 0,
+    duration: 2,
+    ease: "power2.out",
+  });
+  gsap.from(".t-card1", {
+    scrollTrigger: {
+      trigger: ".t-card1",
+      toggleActions: "restart none restart none",
+    },
+    x: -100,
+    opacity: 0,
+    duration: 2,
+    ease: "power2.out",
+  });
+  gsap.from(".t-card2", {
+    scrollTrigger: {
+      trigger: ".t-card2",
+      toggleActions: "restart none restart none",
+    },
+    x: 100,
+    opacity: 0,
+    duration: 2,
+    ease: "power2.out",
+  });
+  gsap.from(".t-card3", {
+    scrollTrigger: {
+      trigger: ".t-card3",
+      toggleActions: "restart none restart none",
+    },
+    scale: 0.5,
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out",
+  });
+  gsap.from(".c-email", {
+    scrollTrigger: {
+      trigger: ".c-email",
+      toggleActions: "restart none restart none",
+    },
+    x: -100,
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out",
+  });
+  gsap.from(".c-whatsapp", {
+    scrollTrigger: {
+      trigger: ".c-whatsapp",
+      toggleActions: "restart none restart none",
+    },
+    x: -100,
+    opacity: 0,
+    duration: 2,
+    ease: "power2.out",
+  });
+  gsap.from(".c-msgr", {
+    scrollTrigger: {
+      trigger: ".c-msgr",
+      toggleActions: "restart none restart none",
+    },
+    x: -100,
+    opacity: 0,
+    duration: 3,
+    ease: "power2.out",
+  });
+  gsap.from(".i-user", {
+    scrollTrigger: {
+      trigger: ".i-user",
+      toggleActions: "restart none restart none",
+    },
+    x: 100,
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out",
+  });
+  gsap.from(".i-email", {
+    scrollTrigger: {
+      trigger: ".i-email",
+      toggleActions: "restart none restart none",
+    },
+    x: 100,
+    opacity: 0,
+    duration: 2,
+    ease: "power2.out",
+  });
+  gsap.from(".i-phone", {
+    scrollTrigger: {
+      trigger: ".i-phone",
+      toggleActions: "restart none restart none",
+    },
+    x: 100,
+    opacity: 0,
+    duration: 3,
+    ease: "power2.out",
+  });
+  gsap.from(".textarea", {
+    scrollTrigger: {
+      trigger: ".textarea",
+      toggleActions: "restart none restart none",
+    },
+    x: 100,
+    opacity: 0,
+    duration: 3,
+    ease: "power2.out",
+  });
+  gsap.from(".i-btn", {
+    scrollTrigger: {
+      trigger: ".i-btn",
+      toggleActions: "restart none restart none",
+    },
+    scale: 0.5,
+    opacity: 0,
+    duration: 3,
+    ease: "power2.out",
+  });
 
   // --- This is for the video player
   const player = new Plyr("#player");
