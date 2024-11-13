@@ -1,13 +1,14 @@
 (() => {
   console.log("IIFE Fired!");
 
+  // --- This is for my feature to Get the current page URL button
   const shareButton = document.querySelector("[data-copy-url]");
 
   if (shareButton) {
     shareButton.addEventListener("click", copyToClipboard);
   }
   function copyToClipboard() {
-    const pageUrl = window.location.href; // Get the current page URL
+    const pageUrl = window.location.href;
     navigator.clipboard
       .writeText(pageUrl)
       .then(() => {
@@ -18,6 +19,7 @@
       });
   }
 
+  // --- This is for my page loader,
   window.addEventListener("load", () => {
     const loader = document.querySelector(".loader");
 
@@ -40,7 +42,7 @@
     }
   });
 
-  // Register first the gsap plugin
+  // --- This is for the scrolling to specific sections
   gsap.registerPlugin(ScrollToPlugin);
 
   const navlinks = document.querySelectorAll("#main-header ul li a");
@@ -60,7 +62,7 @@
     link.addEventListener("click", scrollLink);
   });
 
-  //Adding gsap animation for sections
+  // --- Adding gsap animation for sections
   gsap.registerPlugin(ScrollTrigger);
   gsap.from(".home__social", {
     scrollTrigger: {
@@ -132,10 +134,10 @@
     ease: "power2.out",
   });
 
-  //This is for the video player
+  // --- This is for the video player
   const player = new Plyr("#player");
 
-  // This is to show my sidebar
+  // --- This is to show my sidebar
   const navMenu = document.querySelector("#sidebar"),
     navToggle = document.querySelector("#nav-toggle"),
     navClose = document.querySelector("#nav-close");
@@ -151,7 +153,7 @@
     });
   }
 
-  // This is for my Filter button Active link
+  // --- This is for my Filter button Active link
   const linkWork = document.querySelectorAll(".work__item");
 
   function activeWork() {
@@ -161,7 +163,7 @@
 
   linkWork.forEach((l) => l.addEventListener("click", activeWork));
 
-  // This is for my active link sections
+  // --- This is for my active link sections
   const sections = document.querySelectorAll("section[id]");
 
   window.addEventListener("scroll", navHighlighter);
@@ -186,7 +188,7 @@
     });
   }
 
-  // This is for the project filter button
+  // --- This is for the project filter button
   const filterButtons = document.querySelectorAll(".work__item");
   const cards = document.querySelectorAll(".work__card");
 
@@ -227,7 +229,7 @@
     });
   });
 
-  // This is to populate the popup window for my project content
+  // --- This is to populate the popup window for my project content
   document.addEventListener("click", (e) => {
     if (e.target.classList.contains("work__button")) {
       togglePortfolioPopup();
@@ -238,7 +240,6 @@
   function togglePortfolioPopup() {
     document.querySelector(".portfolio__popup").classList.toggle("open");
   }
-
   // I need to check if the close button exists before adding the event listener because in my first try,
   // I encountered null error in the browser console even though it executed correctly and the reason was
   // the element class popup-close is not yet in the DOM at that moment because it will only trigger when
@@ -258,7 +259,7 @@
       portfolioItem.querySelector(".portfolio__item-details").innerHTML;
   }
 
-  // This is for my service popup modal content
+  // --- This is for my service popup modal content
   const modalViews = document.querySelectorAll(".services__modal"),
     modalBtns = document.querySelectorAll(".services__button"),
     modalCloses = document.querySelectorAll(".services__modal-close");
@@ -282,7 +283,7 @@
     });
   });
 
-  // This is for my skill tab or dropdown toggle tools icon
+  // --- This is for my skill tab or dropdown toggle tools icon
   const tabs = document.querySelectorAll("[data-target]"),
     tabContent = document.querySelectorAll("[data-content]");
 
@@ -293,18 +294,85 @@
       tabContent.forEach((tabContents) => {
         tabContents.classList.remove("skills__active");
       });
-
       target.classList.add("skills__active");
-
       tabs.forEach((tab) => {
         tab.classList.remove("skills__active");
       });
-
       tab.classList.add("skills__active");
     });
   });
 
-  // This for my contact input form label animation
+  // --- This is for my testimonials slider, using the gsap logic to achieve the desired effect
+  const wrapper = document.querySelector(".testimonials__wrapper");
+  const tCards = document.querySelectorAll(".testimonial__card");
+  const nextBtn = document.querySelector(".next");
+  const prevBtn = document.querySelector(".prev");
+
+  let currentIndex = 0;
+  let slidesToShow = getSlidesToShow();
+  let totalCards = tCards.length;
+  let slideWidth = getSlideWidth();
+
+  // I need to clone first few cards to create an infinite loop effect when sliding
+  const cloneCount = slidesToShow;
+  for (let i = 0; i < cloneCount; i++) {
+    const clone = tCards[i].cloneNode(true);
+    wrapper.appendChild(clone);
+  }
+  // Then I need to create a function to determine the number of slides to show based on screen width/sizes
+  function getSlidesToShow() {
+    if (window.innerWidth >= 1024) return 2;
+    if (window.innerWidth >= 768) return 2;
+    return 1;
+  }
+  // This Function to calculate my slide slide width to ensure the cards fit perfectly within the container
+  function getSlideWidth() {
+    const containerWidth = document.querySelector(
+      ".testimonials__container"
+    ).offsetWidth;
+    return (containerWidth - 24 * (slidesToShow - 1)) / slidesToShow;
+  }
+  // Then creat my function to animate to a specific slide with gsap logic
+  function goToSlide(index) {
+    const slideDistance = index * slideWidth;
+    gsap.to(wrapper, {
+      x: -slideDistance,
+      duration: 1.2,
+      ease: "power3.out",
+      onComplete: () => {
+        if (index >= totalCards) {
+          currentIndex = 0;
+          gsap.set(wrapper, { x: 0 });
+        } else if (index < 0) {
+          currentIndex = totalCards - slidesToShow;
+          gsap.set(wrapper, { x: -currentIndex * slideWidth });
+        }
+      },
+    });
+  }
+  // For this function, I need to Update slidesToShow and slideWidth on window resize
+  function updateResponsiveSettings() {
+    slidesToShow = getSlidesToShow();
+    slideWidth = getSlideWidth();
+    goToSlide(currentIndex);
+  }
+  // Add Listener to next and previous set of slides
+  nextBtn.addEventListener("click", () => {
+    currentIndex++;
+    if (currentIndex >= totalCards) currentIndex = 0;
+    goToSlide(currentIndex);
+  });
+  prevBtn.addEventListener("click", () => {
+    currentIndex--;
+    if (currentIndex < 0) currentIndex = totalCards - slidesToShow;
+    goToSlide(currentIndex);
+  });
+  // Add as well my Listener here to make it sure it is responsive
+  window.addEventListener("resize", updateResponsiveSettings);
+  // This will Initialize on load
+  updateResponsiveSettings();
+
+  // --- This for my contact input form label animation
   const inputs = document.querySelectorAll(".input");
 
   function focusInput() {
@@ -324,7 +392,7 @@
     input.addEventListener("blur", blurInput);
   });
 
-  // This is to show the scroll up button
+  // --- This is to show the scroll up button
   function scrollUp() {
     const scrollUp = document.querySelector("#scroll-up");
 

@@ -1,13 +1,5 @@
 @use "../abstracts/variables" as t; // I use "t" as testimonials
 
-@media screen and (min-width: 992px) {
-  .testimonials__container {
-    width: 750px;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-}
-
 .testimonial__card {
   background-color: t.$box-color;
   padding: 1.8rem 2rem;
@@ -60,11 +52,27 @@
   font-size: t.$small-font-size;
 }
 
-/* Swiper Class */
-.swiper-pagination-bullet {
-  background-color: t.$box-color;
+.testimonials__wrapper {
+  display: flex;
+  transition: transform 0.3s ease;
 }
 
-.swiper-pagination-bullet-active {
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: t.$box-color;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.pagination button:hover {
   background-color: t.$primary-color;
+  transform: translateY(-3px);
 }
