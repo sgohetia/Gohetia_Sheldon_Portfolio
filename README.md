@@ -1,10 +1,10 @@
-# Sheldon Gohetia's Portfolio
+# 🎨 Portfolio Showcase of Sheldon
 
 ![sheldon's portfolio](images/readme-img.jpg)
 
 A showcase of my web development, UX/UI design, and coding projects. This repository features a collection of dynamic and interactive websites, custom animations, and UI designs, demonstrating my skills in frontend and backend development.
 
-## Content List 📋<br/>
+## Content List 📊<br/>
 
 [About](#about)<br/>
 [Expertise](#expertise)<br/>
@@ -20,19 +20,19 @@ As a seasoned UX and web developer with over five years of experience, I bring a
 
 Below is a brief overview of the key skills showcased in this portfolio:
 
-### Languages:
+### Languages 🚀:
 
 ASP.NET/Csharp, Php, JavaScript, HTML5, CSS3, Tailwind
 
-### Frameworks and Libraries:
+### Frameworks and Libraries 🚀:
 
 GreenSock
 
-### Tools:
+### Tools 🚀:
 
 Git, Figma, Adobe XD, Cinema 4D, After Effects
 
-### Technologies:
+### Technologies 🚀:
 
 Responsive Design, AJAX
 
@@ -51,7 +51,7 @@ To run the portfolio locally:
 - Open the index.html file in your browser, or if using a local server, start the server and navigate to localhost to view.
 - Ensure the project folder is placed in the appropriate directory of your local server's root. For example, in WAMP, it should be in wamp64/www/, and in MAMP, it should be in the htdocs folder.
 
-## Contact 📱 <a id="contact"></a>
+## Contact 🤙 <a id="contact"></a>
 
 Feel free to reach out if you’d like to collaborate or have any questions!
 
