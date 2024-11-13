@@ -1,6 +1,6 @@
 <h1>
   <img src="images/mylogo.svg" alt="Logo" width="24" style="vertical-align: middle; margin-right: 8px;">
-  Portfolio Showcase of Sheldon
+  Sheldon's Portfolio Showcase
 </h1>
 
 ![sheldon's portfolio](images/readme-img.jpg)
