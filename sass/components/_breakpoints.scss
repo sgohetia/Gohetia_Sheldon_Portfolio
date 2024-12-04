@@ -61,7 +61,7 @@
 .nav__link:hover::after {
   position: absolute;
   // content: "";
-  content: url("/images/mylogo.svg");
+  content: url("../images/mylogo.svg");
   width: 6px;
   height: 48px;
   border-radius: 50%;
