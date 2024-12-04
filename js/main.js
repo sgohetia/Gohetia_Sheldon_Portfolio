@@ -253,16 +253,6 @@
     duration: 2,
     ease: "power2.out",
   });
-  gsap.from(".t-card3", {
-    scrollTrigger: {
-      trigger: ".t-card3",
-      toggleActions: "restart none restart none",
-    },
-    scale: 0.5,
-    opacity: 0,
-    duration: 1,
-    ease: "power2.out",
-  });
   gsap.from(".c-email", {
     scrollTrigger: {
       trigger: ".c-email",
