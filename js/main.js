@@ -203,36 +203,16 @@
     duration: 1,
     ease: "power2.out",
   });
-  gsap.from(".m-design", {
-    scrollTrigger: {
-      trigger: ".m-design",
-      toggleActions: "restart none restart none",
-    },
-    x: -100,
-    opacity: 0,
-    duration: 2,
-    ease: "power2.out",
-  });
-  gsap.from(".b-end", {
-    scrollTrigger: {
-      trigger: ".b-end",
-      toggleActions: "restart none restart none",
-    },
-    scale: 0.5,
-    opacity: 0,
-    duration: 1,
-    ease: "power2.out",
-  });
-  gsap.from(".ui-design", {
-    scrollTrigger: {
-      trigger: ".ui-design",
-      toggleActions: "restart none restart none",
-    },
-    x: 100,
-    opacity: 0,
-    duration: 2,
-    ease: "power2.out",
-  });
+  // gsap.from(".services__container", {
+  //   scrollTrigger: {
+  //     trigger: ".services__container",
+  //     toggleActions: "restart none restart none",
+  //   },
+  //   scale: 0.5,
+  //   opacity: 0,
+  //   duration: 1,
+  //   ease: "power2.out",
+  // });
   gsap.from(".experience", {
     scrollTrigger: {
       trigger: ".experience",
