@@ -94,17 +94,12 @@
   align-items: center;
 }
 .home {
-  background: url("../images/home-bg.jpg");
+  background: url("../images/home-bg.png");
   background-size: cover;
   background-position: center center;
   height: 100vh;
-}
-
-.home-casestudy {
-  background: url("../images/sample.jpg");
-  background-size: cover;
-  background-position: center center;
-  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
 }
 
 .home__img {
@@ -565,6 +560,8 @@
     display: block;
     width: 250px;
     justify-self: center;
+    position: relative; /* Ensure it stacks above the particle background */
+    z-index: 1; /* Place it above the particle background */
   }
   .img__footer {
     width: 80px;

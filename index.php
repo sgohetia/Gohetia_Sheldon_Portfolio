@@ -1,5 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php 
+  //connect to running database server and the speicific database
+  // include("includes/connect.php");
+  require_once("includes/connect.php");
+  //creat a query to run in SQL
+  $query = 'SELECT project_id AS projects, project_name, title, description, project_image, problem_statement, role, concepts, design_process, final_deliverable, data_category, tools, case_description, class_animation, hero_image, 2nd_paragraph, designconcept_img, deliverable_img, role_description, dprocess_img1, dprocess_img2  FROM projects';
+  //run the query to get back the content
+  $results = mysqli_query($connect,$query);
+  ?>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -82,7 +91,7 @@
 
     <main class="main">
       <section class="home" id="home">
-        <div id="sheldon-code-cells"></div>
+      <div id="sheldon-code-cells"></div>
         <h2 class="hidden">This is for the home section</h2>
         <div class="home__container container grid">
           <div class="home__social">
@@ -236,163 +245,32 @@
         </div>
 
         <div class="work__container container grid">
-          <h3 class="hidden">This is for the projects content.</h3>
-          <div class="work__card mix p-web" data-category="design">
-            <img src="images/work-1.jpg" alt="" class="work__img" />
-            <h3 class="work__title">UX and Web development</h3>
-            <span class="work__button"
-              >View Details
-              <i class="ri-arrow-right-line work__button-icon"></i>
-            </span>
-            <div class="portfolio__item-details">
-              <h3 class="details__title">
-                Industry Night 2025, Fanshawe College
-              </h3>
-              <p class="details__description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum
-                impedit voluptatibus minima.
-              </p>
-              <ul class="details__info">
-                <li>Created - <span>October 2024</span></li>
-                <li>Tools - <span>HTML CSS JS SASS</span></li>
-                <li>Role - <span>UX and Web developer</span></li>
-                <li>
-                  View - <span><a href="casestudy.html">Case Study</a></span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="work__card mix p-motion" data-category="motion">
-            <img src="images/work-2.jpg" alt="" class="work__img" />
-            <h3 class="work__title">3D Model Design</h3>
-            <span class="work__button"
-              >View Details
-              <i class="ri-arrow-right-line work__button-icon"></i>
-            </span>
-            <div class="portfolio__item-details">
-              <h3 class="details__title">3D Model Earbuds</h3>
-              <p class="details__description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum
-                impedit voluptatibus minima.
-              </p>
-              <ul class="details__info">
-                <li>Created - <span>May 2024</span></li>
-                <li>Tools - <span>Cinema4D Photoshop</span></li>
-                <li>Role - <span>Motion Designer</span></li>
-                <li>
-                  View - <span><a href="casestudy.html">Case Study</a></span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="work__card mix p-design" data-category="design">
-            <img src="images/work-3.jpg" alt="" class="work__img" />
-            <h3 class="work__title">UI/UX Design</h3>
-            <span class="work__button"
-              >View Details
-              <i class="ri-arrow-right-line work__button-icon"></i>
-            </span>
-            <div class="portfolio__item-details">
-              <h3 class="details__title">TO-DO List Management System</h3>
-              <p class="details__description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum
-                impedit voluptatibus minima.
-              </p>
-              <ul class="details__info">
-                <li>Created - <span>March 2024</span></li>
-                <li>Tools - <span>HTML CSS</span></li>
-                <li>Role - <span>UI/UX Designer</span></li>
-                <li>
-                  View - <span><a href="casestudy.html">Case Study</a></span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="work__card mix p-motion2" data-category="motion">
-            <img src="images/work-4.jpg" alt="" class="work__img" />
-            <h3 class="work__title">3D Model and Branding</h3>
-            <span class="work__button"
-              >View Details
-              <i class="ri-arrow-right-line work__button-icon"></i>
-            </span>
-            <div class="portfolio__item-details">
-              <h3 class="details__title">Burple Juice</h3>
-              <p class="details__description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum
-                impedit voluptatibus minima.
-              </p>
-              <ul class="details__info">
-                <li>Created - <span>May 2024</span></li>
-                <li>
-                  Tools -
-                  <span>Cinema4d Photoshop Illustrator Procreate</span>
-                </li>
-                <li>Role - <span>Graphics Designer</span></li>
-                <li>
-                  View - <span><a href="casestudy.html">Case Study</a></span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="work__card mix p-backend" data-category="backend">
-            <img src="images/work-5.jpg" alt="" class="work__img" />
-            <h3 class="work__title">Backend Development</h3>
-            <span class="work__button"
-              >View Details
-              <i class="ri-arrow-right-line work__button-icon"></i>
-            </span>
-            <div class="portfolio__item-details">
-              <h3 class="details__title">
-                Paynamics Technologies Inc. Website
-              </h3>
-              <p class="details__description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum
-                impedit voluptatibus minima.
-              </p>
-              <ul class="details__info">
-                <li>Created - <span>Jan 2016</span></li>
-                <li>Tools - <span>HTML CSS JS</span></li>
-                <li>Role - <span>Web Designer</span></li>
-                <li>
-                  View - <span><a href="casestudy.html">Case Study</a></span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="work__card mix p-backend2" data-category="backend">
-            <img src="images/work-6.jpg" alt="" class="work__img" />
-            <h3 class="work__title">Firmware Integration</h3>
-            <span class="work__button"
-              >View Details
-              <i class="ri-arrow-right-line work__button-icon"></i>
-            </span>
-            <div class="portfolio__item-details">
-              <h3 class="details__title">
-                Integrate Graphics Firmware to Specific ATM Machine windows
-                version
-              </h3>
-              <p class="details__description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum
-                impedit voluptatibus minima.
-              </p>
-              <ul class="details__info">
-                <li>Created - <span>January 2023</span></li>
-                <li>Tools - <span>XML CSharp PHP</span></li>
-                <li>
-                  Role -
-                  <span>Hardware Firmware System Integration Engineer</span>
-                </li>
-                <li>
-                  View - <span><a href="casestudy.html">Case Study</a></span>
-                </li>
-              </ul>
-            </div>
-          </div>
+        <?php
+            while($row = mysqli_fetch_array($results)) {
+            echo'    
+            <h3 class="hidden">This is for the projects content.</h3>
+            <div class="work__card mix '.$row['class_animation'].'" data-category="'.$row['data_category'].'">
+              <img src="images/'.$row['project_image'].'" alt="" class="work__img" />
+                <h3 class="work__title">'.$row['title'].'</h3>
+                  <span class="work__button">View Details
+                    <i class="ri-arrow-right-line work__button-icon"></i>
+                  </span>
+                <div class="portfolio__item-details">
+                  <h3 class="details__title">'.$row['project_name'].'</h3>
+                  <p class="details__description">
+                    '.$row['description'].'
+                  </p>
+                  <ul class="details__info">
+                    <li>Tools - <span>'.$row['tools'].'</span></li>
+                    <li>Role - <span>'.$row['role'].'</span></li>
+                    <li>
+                      View - <span><a href="casestudy.php?id='.$row['projects'].'">Case Study</a></span>
+                    </li>
+                  </ul>
+                </div>
+              </div>';
+            }
+          ?>
         </div>
       </section>
 
@@ -996,7 +874,7 @@
                 <span class="contact__card-data"
                   >sheldongohetia.ca@gmail.com</span
                 >
-                <a href="mailto:examplemail@gmail.com" class="contact__button">
+                <a href="mailto:sheldongohetia.ca@gmail.com" class="contact__button">
                   Email me
                   <i class="ri-arrow-right-line contact__button-icon"></i>
                 </a>
@@ -1007,7 +885,7 @@
                 <h3 class="contact__card-title">Whatsapp</h3>
                 <span class="contact__card-data">999-888-777</span>
                 <a
-                  href="https://api.whatsapp.com/send?phone=349865677andtext=Hello, more information!"
+                  href="#"
                   class="contact__button"
                 >
                   Call me
@@ -1019,7 +897,7 @@
                 <i class="ri-messenger-line contact__card-icon"></i>
                 <h3 class="contact__card-title">Messenger</h3>
                 <span class="contact__card-data">sg.fb</span>
-                <a href="https://m.me/crypticalcoder" class="contact__button">
+                <a href="#" class="contact__button">
                   Message me
                   <i class="ri-arrow-right-line contact__button-icon"></i>
                 </a>
@@ -1028,28 +906,28 @@
           </div>
 
           <div class="contact__content">
-            <form action="" class="contact__form">
+            <form method="post" action="sendmail.php" class="contact__form">
               <div class="input__container i-user">
-                <input type="text" class="input" />
-                <label for="">Username</label>
+                <input type="text" class="input" name="name" id="name"/>
+                <label for="name">Username</label>
                 <span>Username</span>
               </div>
               <div class="input__container i-email">
-                <input type="email" class="input" />
-                <label for="">Email</label>
+                <input type="email" class="input" name="email" id="email"/>
+                <label for="email">Email</label>
                 <span>Email</span>
               </div>
               <div class="input__container i-phone">
-                <input type="tel" class="input" />
-                <label for="">Phone</label>
+                <input type="tel" class="input" name="phone" id="phone"/>
+                <label for="phone">Phone</label>
                 <span>Phone</span>
               </div>
               <div class="input__container textarea">
-                <textarea name="" id="" class="input"></textarea>
-                <label for="">Message</label>
+                <textarea name="comments" id="comments" class="input"></textarea>
+                <label for="comments">Message</label>
                 <span>Message</span>
               </div>
-              <button type="submit" class="button i-btn">
+              <button type="submit" class="button i-btn" value="send">
                 <i class="uil uil-navigator button__icon"></i>
                 Send Message
               </button>

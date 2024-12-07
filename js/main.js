@@ -163,9 +163,9 @@
     duration: 1,
     ease: "power2.out",
   });
-  gsap.from(".p-design", {
+  gsap.from(".p-backend", {
     scrollTrigger: {
-      trigger: ".p-design",
+      trigger: ".p-backend",
       toggleActions: "restart none restart none",
     },
     x: 100,
@@ -178,14 +178,14 @@
       trigger: ".p-motion2",
       toggleActions: "restart none restart none",
     },
-    x: -100,
+    x: 100,
     opacity: 0,
     duration: 3,
     ease: "power2.out",
   });
-  gsap.from(".p-backend", {
+  gsap.from(".p-design", {
     scrollTrigger: {
-      trigger: ".p-backend",
+      trigger: ".p-design",
       toggleActions: "restart none restart none",
     },
     scale: 0.5,
@@ -198,21 +198,12 @@
       trigger: ".p-backend2",
       toggleActions: "restart none restart none",
     },
-    x: 100,
+    x: -100,
     opacity: 0,
     duration: 1,
     ease: "power2.out",
   });
-  // gsap.from(".services__container", {
-  //   scrollTrigger: {
-  //     trigger: ".services__container",
-  //     toggleActions: "restart none restart none",
-  //   },
-  //   scale: 0.5,
-  //   opacity: 0,
-  //   duration: 1,
-  //   ease: "power2.out",
-  // });
+
   gsap.from(".experience", {
     scrollTrigger: {
       trigger: ".experience",
@@ -599,4 +590,81 @@
     else scrollUp.classList.remove("show-scroll");
   }
   window.addEventListener("scroll", scrollUp);
+
+  // --- This is for my hero home section bg particle
+  particlesJS("sheldon-code-cells", {
+    particles: {
+      number: {
+        value: 100,
+        density: {
+          enable: true,
+          value_area: 800,
+        },
+      },
+      color: {
+        value: "#12eb53",
+      },
+      shape: {
+        type: "circle",
+        stroke: {
+          width: 0,
+          color: "#000000",
+        },
+      },
+      opacity: {
+        value: 0.8,
+        random: true,
+        animation: {
+          enable: true,
+          speed: 1,
+          opacity_min: 0,
+          sync: false,
+        },
+      },
+      size: {
+        value: 3,
+        random: true,
+      },
+      line_linked: {
+        enable: true,
+        distance: 150,
+        color: "#12eb53",
+        opacity: 0.4,
+        width: 1,
+      },
+      move: {
+        enable: true,
+        speed: 2,
+        direction: "none",
+        random: true,
+        straight: false,
+        out_mode: "out",
+        bounce: false,
+      },
+    },
+    interactivity: {
+      detectsOn: "canvas",
+      events: {
+        onHover: {
+          enable: true,
+          mode: "push",
+        },
+        onClick: {
+          enable: true,
+          mode: "push",
+        },
+        resize: true,
+      },
+      modes: {
+        repulse: {
+          distance: 100,
+          duration: 0.4,
+        },
+        push: {
+          particles_nb: 4,
+        },
+      },
+    },
+    retina_detect: true,
+  });
 })();
