@@ -29,12 +29,12 @@
   </head>
 
   <body>
-    <div class="loader">
+    <!-- <div class="loader">
       <video class="loader__video" autoplay muted loop playsinline>
         <source src="video/pageload.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-    </div>
+    </div> -->
     <h2 class="hidden">This is the menu burger for mobile</h2>
     <div class="nav__toggle" id="nav-toggle">
       <i class="ri-menu-line"></i>

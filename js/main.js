@@ -20,27 +20,27 @@
   }
 
   // --- This is for my page loader,
-  window.addEventListener("load", () => {
-    const loader = document.querySelector(".loader");
+  // window.addEventListener("load", () => {
+  //   const loader = document.querySelector(".loader");
 
-    if (loader && !localStorage.getItem("pageLoaded")) {
-      console.log("page loaded!");
+  //   if (loader && !localStorage.getItem("pageLoaded")) {
+  //     console.log("page loaded!");
 
-      setTimeout(() => {
-        loader.classList.add("loader--hidden");
+  //     setTimeout(() => {
+  //       loader.classList.add("loader--hidden");
 
-        loader.addEventListener("transitionend", () => {
-          if (document.body.contains(loader)) {
-            document.body.removeChild(loader);
-          }
-        });
-      }, 4500);
+  //       loader.addEventListener("transitionend", () => {
+  //         if (document.body.contains(loader)) {
+  //           document.body.removeChild(loader);
+  //         }
+  //       });
+  //     }, 4500);
 
-      localStorage.setItem("pageLoaded", "true");
-    } else if (loader) {
-      loader.style.display = "none";
-    }
-  });
+  //     localStorage.setItem("pageLoaded", "true");
+  //   } else if (loader) {
+  //     loader.style.display = "none";
+  //   }
+  // });
 
   // --- This is for the scrolling to specific sections
   gsap.registerPlugin(ScrollToPlugin);
